@@ -1,0 +1,405 @@
+/* =========================================
+   1. RESET & GLOBAL VARIABLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-blue: #2c3e50;  /* Deep Professional Blue */
+    --accent-orange: #e67e22; /* Energetic Orange */
+    --accent-gold: #ffd700;   /* Gold for High Stats */
+    --bg-light: #f4f7f6;      /* Light Gray Background */
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. MAIN LAYOUT STRUCTURE
+   ========================================= */
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Wrapper for the right side content */
+.content-wrapper {
+    margin-left: 300px; /* Must match sidebar width */
+    padding: 40px;
+    width: 100%;
+}
+
+/* =========================================
+   3. SIDEBAR STYLING (The Left Panel)
+   ========================================= */
+.sidebar {
+    width: 300px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Fixes sidebar in place while scrolling */
+    position: fixed; 
+    height: 100vh;
+    left: 0;
+    top: 0;
+    overflow-y: auto; /* Allows scrolling inside sidebar on small screens */
+    z-index: 100;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+.profilehead {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-orange);
+    margin-bottom: 20px;
+    background-color: #fff; /* Fallback if image doesn't load */
+}
+
+.sidebar h1 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.role {
+    font-size: 1rem;
+    color: #ecf0f1;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.sub-role {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    opacity: 0.7;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* Sidebar Info Boxes */
+.details-box, .skills-box {
+    width: 100%;
+    text-align: left;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--accent-orange);
+}
+
+.details-box ul {
+    list-style: none;
+}
+
+.details-box li {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    word-break: break-all; /* Prevents long emails from breaking layout */
+}
+
+/* Skill Tags */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(0,0,0,0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   4. WPM HERO SECTION (The Hook)
+   ========================================= */
+.wpmstuffs {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.25);
+}
+
+.wpm-content {
+    display: flex;
+    gap: 50px;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.big-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.9;
+}
+
+.video-cta p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.btn-watch {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--white);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-watch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   5. MAIN INFO & SERVICES CARD
+   ========================================= */
+.maininfo {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.maininfo h2 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-left: 5px solid var(--accent-orange);
+    padding-left: 15px;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.maininfo hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-orange);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   6. VIDEO SECTION
+   ========================================= */
+.video-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.video-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.video-sub {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.video-frame {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #fafafa;
+    width: 100%;
+    max-width: 800px;
+}
+
+.main-video {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+/* =========================================
+   7. PROJECT LINK CTA (Bottom Section)
+   ========================================= */
+.project-link-section {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 50px 30px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.project-link-section p {
+    margin-bottom: 30px;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-projects {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: var(--white);
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+    border: 2px solid transparent;
+}
+
+.btn-projects:hover {
+    background-color: transparent;
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   8. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 900px) {
+    .wpmstuffs {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .wpm-content {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack Sidebar and Content */
+    .container {
+        flex-direction: column;
+    }
+
+    /* Unfix sidebar so it scrolls naturally */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; 
+        padding: 40px 20px;
+        box-shadow: none;
+        border-bottom: 5px solid var(--accent-orange);
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    /* Adjust typography for mobile */
+    .big-number {
+        font-size: 2.8rem;
+    }
+
+    .btn-watch, .btn-projects {
+        width: 100%; /* Full width buttons are easier to tap */
+        display: block;
+        text-align: center;
+    }
+    
+    .project-link-section {
+        padding: 40px 20px;
+    }
+}

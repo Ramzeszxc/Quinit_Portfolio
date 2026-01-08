@@ -3,24 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All About Miko</title>
+    <title>Miko | Data Specialist</title>
+    <link rel="stylesheet" href="../styles/detailspage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="sidebar">
-        <img src="" class="profilehead"> 
-        <h1>Michael Angelou C. Quinit</h1>
-        <p>More personal info's here (naa nis sidebar) </p>
-    </div>
 
-    <div class="maininfo">
-        <h1>Main Infos here</h1>
-        <p>Naka center ni sya</p>
-    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-container">
+                <img src="../images/qwerty.jpg" alt="Profile" class="profilehead">
+            </div>
+            <h1>Michael Angelou C. Quinit</h1>
+            <p class="role">Data Entry Specialist<br><span class="sub-role">Aspiring Full Stack Dev</span></p>
+            
+            <div class="details-box">
+                <h3>Contact</h3>
+                <ul>
+                    <li>📧 michaelangeloucquinit@gmail.com</li>
+                    <li>📱 +63 99268243</li>
+                    <li>📍 Mindanao, Philippines</li>
+                </ul>
+            </div>
 
-    <div class="wpmstuffs">
-        <h1>Diri ang wpm stuffs</h1>
-        <video src="" class=""></video>
+            <div class="skills-box">
+                <h3>Top Skills</h3>
+                <div class="tag-container">
+                    <span class="tag">Fast Typing</span>
+                    <span class="tag">Attention to Detail</span>
+                    <span class="tag">Graphic Design</span>
+                    <span class="tag">Google Sheets/Docs</span>
+                    <span class="tag">Data Cleaning</span>
+                    <span class="tag">Internet Research</span>
+                    <span class="tag">English Proficiency</span>
+                    <span class="tag">File Conversions</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            
+            <div class="wpmstuffs">
+                <div class="wpm-content">
+                    <div class="stat-box">
+                        <span class="big-number">90+</span>
+                        <span class="label">WPM Speed</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="big-number">95%+</span>
+                        <span class="label">Accuracy</span>
+                    </div>
+                </div>
+                <div class="video-cta">
+                    <p>Verified Speed & Accuracy.</p>
+                    <a href="#video-demo" class="btn-watch">Watch Live Demo</a>
+                </div>
+            </div>
+
+            <div class="maininfo">
+                <h2>About Me</h2>
+                <p class="intro-text">
+                    I am a disciplined IT student specializing in efficient data handling. 
+                    While I am building my career in Full Stack Development, I currently offer high-speed, 
+                    error-free Data Entry and Transcription services. I treat every task with the urgency and precision it requires.
+                </p>
+                
+                <hr>
+
+                <h2>Services Offered</h2>
+                <div class="services-grid">
+                    <div class="card">
+                        <h3>📄 Transcription</h3>
+                        <p>Converting audio/video to text with perfect grammar and time-stamping.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📊 Data Entry</h3>
+                        <p>Excel spreadsheet management, CRM updates, and copy-typing.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📝 Document Control</h3>
+                        <p>Formatting Word documents, PDF conversions, and proofreading.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="video-demo" class="video-section">
+                <h3>Live Speed Test</h3>
+                <p class="video-sub">Uncut footage of my typing speed test.</p>
+                <div class="video-frame">
+                    <video src="../videos/monkeytypeproof.mp4" controls class="main-video"></video>
+                </div>
+            </div>
+
+            <div class="project-link-section">
+                <h2>Want to see my past work?</h2>
+                <p>Check out my portfolio of school projects, system prototypes, and documents.</p>
+                <a href="projects.html" class="btn-projects">View My Projects &rarr;</a>
+            </div>
+
+        </div>
     </div>
 
 </body>
